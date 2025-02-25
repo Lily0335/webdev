@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Color Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s ease;
+            background-color: white;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 10px;
+        }
+        .color-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+            transition: transform 0.2s ease, opacity 0.3s ease;
+        }
+        .color-btn:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        .red { background-color: #e63946; }
+        .blue { background-color: #457b9d; }
+        .green { background-color: #2a9d8f; }
+        .yellow { background-color: #e9c46a; color: black; }
+        .reset { background-color: black; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Click a Button to Change Background Color</h1>
+    <div class="btn-container">
+        <button class="color-btn red" onclick="changeColor('#e63946')">Red</button>
+        <button class="color-btn blue" onclick="changeColor('#457b9d')">Blue</button>
+        <button class="color-btn green" onclick="changeColor('#2a9d8f')">Green</button>
+        <button class="color-btn yellow" onclick="changeColor('#e9c46a')">Yellow</button>
+        <button class="color-btn reset" onclick="changeColor('white')">Reset</button>
+    </div>
+
+    <script>
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>
 

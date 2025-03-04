@@ -1,1 +1,93 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+      background-color: #71acbe;
+    }
+    #quote-box {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-color: #c99696;
+    }
+    #quote-text {
+      font-size: 24px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    #quote-author {
+      font-size: 18px;
+      color: #555;
+    }
+    #generate-btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #5d6d80;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #generate-btn:hover {
+      background-color: #5685b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Quote Generator</h1>
+  <div id="quote-box">
+    <p id="quote-text">"Click the button below to generate a random quote!"</p>
+    <p id="quote-author">- Unknown</p>
+  </div>
+  <button id="generate-btn">Generate Quote</button>
+
+  
+</body>
+<script >
+    // Array of quotes
+const quotes = [
+  { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+  { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "It always seems impossible until it’s done.", author: "Nelson Mandela" },
+  { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+  { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+  { text: "Your time is limited, don’t waste it living someone else’s life.", author: "Steve Jobs" },
+  { text: "If you want to live a happy life, tie it to a goal, not to people or things.", author: "Albert Einstein" }
+];
+
+// Select DOM elements
+const quoteTextElement = document.getElementById('quote-text');
+const quoteAuthorElement = document.getElementById('quote-author');
+const generateButton = document.getElementById('generate-btn');
+
+// Function to generate a random quote
+function generateRandomQuote() {
+  // Get a random index from the quotes array
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  
+  // Get the random quote object
+  const randomQuote = quotes[randomIndex];
+  
+  // Update the DOM with the random quote
+  quoteTextElement.textContent = `"${randomQuote.text}"`;
+  quoteAuthorElement.textContent = `- ${randomQuote.author}`;
+}
+
+// Add an event listener to the button
+generateButton.addEventListener('click', generateRandomQuote);
+
+// Generate a random quote on page load
+generateRandomQuote();
+</script>
+</html>

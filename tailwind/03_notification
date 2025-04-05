@@ -1,1 +1,6 @@
 
+<div class="flex align-middle justify-center text-wrap max-w-md mx-auto mr-34 mt-10 p-4 
+bg-green-100 border border-green-300 text-green-800 rounded-lg">
+  <p class="font-medium">Success!</p>
+  <p class="text-sm">Your profile has been updated successfully.</p>
+</div>

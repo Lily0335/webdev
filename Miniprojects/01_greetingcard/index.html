@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREETING CARD GENERATOR</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div class="box">
+        <h1>GREETING CARD GENERATOR</h1>
+    <input type="text" id="nameinput" placeholder="Enter Your Name" required>
+    <!-- Button to generate the card -->
+    <button class="btn">Generate Card</button>
+</div>
+    <!-- Container to display the greeting card -->
+    <div id="greeting-card"></div>
+    <!-- Container to display error message -->
+    <div id="error-message"></div>
+
+    <script>
+        const gentBtn = document.querySelector(".btn");
+        const emojis = ["🌟", "✨", "🎨", "🎉", "💫", "🌈"];
+
+        gentBtn.addEventListener("click", function() {
+            // Get the value from the input field
+            let name = document.querySelector("#nameinput").value.trim();  // Get name and remove any extra spaces
+            
+            // Get the error message container
+            let errorMessageContainer = document.querySelector("#error-message");
+            let greetingCardContainer = document.querySelector("#greeting-card");
+            
+            // Clear any previous messages or cards
+            errorMessageContainer.innerHTML = "";
+            greetingCardContainer.innerHTML = "";
+            
+            // Check if the name is empty
+            if (name === "") {
+                // Display error message on the screen (instead of alert)
+                errorMessageContainer.innerHTML = "Please enter a valid name!";
+                return;  // Stop further execution and return
+            }
+            
+            // Generate a random emoji
+            let randEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Create the greeting card HTML
+            let card = `
+                <div class="card">
+                    <h1>Hello, ${name} ${randEmoji}!</h1>
+                    <p>This is a greeting card for you. Feel free to customize it with your own details.</p>
+                </div>
+            `;
+            
+            // Display the greeting card inside the 'greeting-card' div
+            greetingCardContainer.innerHTML = card;
+            
+            // Change the display style to 'flex' to make the card visible
+            greetingCardContainer.style.display = "flex";
+        });
+    </script>
+
+</body>
+</html>

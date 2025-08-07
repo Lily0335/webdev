@@ -18,3 +18,5 @@ sayhey();
 function sayhey(){
     console.log("Hey there"); // available for only normal function
 }
+
+

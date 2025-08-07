@@ -1,14 +1,19 @@
-const sayhello = () => {
-    console.log("heyy")
-};
+// const sayhello = () => {
+//     console.log("heyy")
+// };
 
-sayhello();
+// sayhello();
 
-const add = (a,b) =>{
-    return a + b;
+// const add = (a,b) =>{
+//     return a + b;
+// }
+
+// const addNumbers = (...nums) => {
+//     console.log(nums);
+// };
+// addNumbers(10, 22, 33, 44, 5);
+
+sayhey();
+function sayhey(){
+    console.log("Hey there");
 }
-
-const addNumbers = (...nums) => {
-    console.log(nums);
-};
-addNumbers(10, 22, 33, 44, 5);

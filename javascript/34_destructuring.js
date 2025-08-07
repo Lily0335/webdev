@@ -4,3 +4,12 @@ const person1 = {
     age: "40",
     job: "cleaner"
 }
+const person2 = {
+    fname: "bob",
+    age: "80",
+    
+}
+
+const {fname, age} = person1;
+console.log(fname)
+console.log(age)
